@@ -1,0 +1,75 @@
+<html>
+<body id="bodybg">
+<div>
+<h5>Image Url: <input type="text" id="imgpaths"> <button
+type="text" onclick="addImage()">Upload</button></h5>
+<h5>Input Text: <input type="text" id="textenter"> <button
+type="text" onclick="addText()">Enter Text</button></h5>
+<h5>Font Size: <input type="number" id="textsize">
+<button type="text" onclick="Textsize()">Choose</button></h5>
+<h5>Font Color: <input type="color" id="textcolor">
+<button type="text" onclick="Textcolor()">Choose</button></h5>
+</div>
+<div>
+<img src="7.png" id="gtimage">
+</div>
+<div>
+<h3 id="textval" style="">Text Display</h3>
+</div>
+<button type="button" onclick="changeImagePosition('right')">Right
+Image</button>
+
+<button type="button"
+onclick="changeImagePosition('bg')">Background</button>
+
+<button type="button" onclick="changeImagePosition('left')">Left
+Image</button>
+
+
+
+
+
+<script>
+function changeImagePosition(position){
+	if(position=="right"){
+	var gtimage=document.getElementById('gtimage');
+	gtimage.style.float="right";
+	}
+	else if(position=="left"){
+		var gtimage=document.getElementById('gtimage');
+		gtimage.style.float="left";
+	}
+	else if(position=="bg"){
+		var gtimage=document.getElementById('gtimage');
+		gtimage.style.display="none";
+		var imgpaths=document.getElementById('imgpaths').value;
+		document.getElementById('bodybg').style.backgroundImage = "url('"+imgpaths+"')";
+	}
+}
+
+function addText(){
+	var textenter=document.getElementById('textenter').value;
+	var textval=document.getElementById('textval');
+	textval.innerHTML=textenter;
+}
+
+function addImage(){
+	var imgpaths=document.getElementById('imgpaths').value;
+	var gtimage=document.getElementById('gtimage');
+	gtimage.setAttribute("src",imgpaths);
+}
+
+function Textcolor(){
+	var textcolor=document.getElementById('textcolor').value;
+	var textval=document.getElementById('textval');
+	textval.style.color=textcolor;
+}
+
+function Textsize(){
+	var textsize=document.getElementById('textsize').value;
+	var textval=document.getElementById('textval');
+	textval.style.fontSize=textsize+"px";
+}
+</script>
+</body>
+</html>

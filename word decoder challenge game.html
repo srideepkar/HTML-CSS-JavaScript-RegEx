@@ -1,0 +1,111 @@
+<html>
+<head>
+<style>
+.wrong{
+	font-size:20px;
+	font-family:arial;
+}
+.game{
+	border-style:solid;
+	border-width:1px;
+	height:300px;
+	margin-left:40%;
+	margin-top:30%;
+}
+.scrambled{
+	height:30px;
+	width:250px;
+	border-style:solid;
+	border-width:1px;
+	text-align:center;
+	padding:15px;
+	margin-left:10%;
+	margin-top:10px;
+}
+.answer{
+	margin-top:30px;
+	padding-top:10px;
+	height:50px;
+	width:220px;
+	border-style:solid;
+	border-width:1px;
+	margin-left:30px;
+}
+.buttons{
+	margin-top:30px;
+	margin-left:10px;
+}
+</style>
+	<script>
+		var words=["007","gmail","right","T-shirt"];
+		var hint=["Bond","email","North to East","wear the tea"];
+		var random=0;
+		var word;
+		function start(){
+			var temp=words.length;
+			random=Math.floor(Math.random()*temp);
+			word=words[random;
+			var data=words[random];
+			scramble();
+		}
+		
+		function scramble(){
+			var scr_word='';
+			var arr=[];
+			var no= Math.floor(Math.floor()*data.length);
+			for(var i=0;i<data.length;){
+			var n =Math.floor(Math.floor()*data.length);
+			if(arr.length==0){
+				arr.push(n);
+				scr_word+=data[n];
+					
+			}
+			var a=arr.indexOf(n);
+			if(a==-1){
+				arr.push(n);
+				scr_word+=data[n];
+			}
+			if(scr_word.length==data.length){
+				break;
+			}
+			
+			}
+			document.getElementById("wrong").innerHTML=scr_word;
+		}
+		
+		function submit(){
+			var input=document.getElementById('ans').value;
+			input=input.toUpperCase();
+			if(input==word){
+				alart("correct");
+				start();
+			}
+			else{
+				alart("wrong");
+			}
+		}
+		
+		function hint(){
+			var a=words.indexOf(word);
+			alart(hint[a]);
+		}
+	</script>
+	</head>
+	<body onload=start()>
+	<center><h1 style="margin-top: 100px;">WELCOME</h1></center>
+	<div class="game">
+		<div class="scrambled">
+		<span id="wrong" style="color:black"></span>
+	</div>
+	<div class="answer">
+		<center><input type="text" id="ans" placeholder="Enetr Your Word"></center>
+	</div>
+		<div class="buttons">
+			<button onclick="hint()">Hint</button>
+			<button onclick="submit()">Submit</button>
+			<center><button onclick="scramble()">Start</button></center>
+		</div>
+	</div>
+</body>
+</html>
+</head>

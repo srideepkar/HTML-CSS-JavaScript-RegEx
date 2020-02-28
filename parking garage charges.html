@@ -1,0 +1,25 @@
+<html>
+<body>
+	<input type="text" id="txt"></input>
+	<button type="button" onclick="cal()" id="bt">calculate-Charges</button>
+	<h1 id="op"></h1>
+	<script>
+	function cal(){
+		var x=parseFloat(document.getElementById("txt").value);
+		var b;
+		if(x<=3)
+		{
+			b=2.00;
+		}
+		else{
+			x=x-3;
+			b=x*0.50+2.00;
+		}
+		if(b>10){
+			b=10.00;
+		}
+		document.getElementById("op").innerHTML="total of yesterday's receipts: "+b;
+		}
+	</script>
+</body>
+</html>

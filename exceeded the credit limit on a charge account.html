@@ -1,0 +1,28 @@
+<html>
+	<body>
+		Account Number: <input type="text" id="ac"></input><br><br>
+		Credit Limit: <input type="text" id="cl"></input><br><br>
+		Beginning Balance: <input type="text" id="beg"></input><br><br>
+		Charges: <input type="text" id= "charge"></input><br><br>
+		Credits: <input type="text" id= "credit"></input><br><br>
+
+		<button onclick="cal()" id="cal">Calculate</button>
+		<h1 id="ex"></h1>
+		<script>
+		function cal()
+		{
+			var cl=parseFloat(document.getElementById("cl").value);
+			var beg=parseFloat(document.getElementById("beg").value);
+			var charge=parseFloat(document.getElementById("charge").value);
+			var credit=parseFloat(document.getElementById("credit").value);
+			var nb=parseFloat(beg+charge-credit);
+			if(nb>cl){
+				document.getElementById("ex").innerHTML="Credit limit exceeded";
+			}
+			else{
+				document.getElementById("ex").innerHTML="New Balance: "+nb;
+			}
+		}			
+		</script>
+	</body>
+</html>

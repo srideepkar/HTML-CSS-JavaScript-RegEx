@@ -1,0 +1,234 @@
+<html>
+<head>
+<script>
+function validateForm() {
+var name = document.forms["rkform"]["name"].value;
+var reg_no = document.forms["rkform"]["reg_no"].value;
+var email = document.forms["rkform"]["email"].value;
+var mobnumber =
+document.forms["rkform"]["mobile_number"].value;
+var program = document.forms["rkform"]["program"].value;
+var tempaddress = document.forms["rkform"]["tempaddress"].value;
+var permaaddress =
+document.forms["rkform"]["permaaddress"].value;
+var namelength=name.length;
+var moblength=mobnumber.length;
+var letters = /^[0-9a-zA-Z]+$/;
+if (name == "") {
+document.getElementById("nameerror").style.display="inlineblock";
+document.getElementById("nameerror").innerHTML="*Name
+is Required.";
+document.getElementById("name").focus();
+return false;
+}else if(namelength>30){
+document.getElementById("nameerror").style.display="inlineblock";
+document.getElementById("nameerror").innerHTML="*Name
+should not exceed 30 characters and can be only alphabets Required.";
+document.getElementById("name").focus();
+return false;
+}else if(reg_no==""){
+document.getElementById("nameerror").style.display="none";
+document.getElementById("regerror").style.display="inlineblock";
+document.getElementById("regerror").innerHTML="*Reg No
+is required";
+document.getElementById("reg_no").focus();
+return false;
+}else if(!isNaN(reg_no) || /^[a-zA-Z]*$/.test(reg_no)){
+document.getElementById("nameerror").style.display="none";
+document.getElementById("regerror").style.display="inlineblock";
+document.getElementById("regerror").innerHTML="*Reg No
+is Number and Character required";
+document.getElementById("reg_no").focus();
+return false;
+}else if(email==""){
+document.getElementById("nameerror").style.display="none";
+document.getElementById("regerror").style.display="none";
+document.getElementById("emailerror").style.display="inlineblock";
+document.getElementById("emailerror").innerHTML="*Email
+is required";
+document.getElementById("email").focus();
+return false;
+}else if(!/^\w+([\.-]?\w+)*@\w+([\.-
+]?\w+)*(\.\w{2,3})+$/.test(email)){
+document.getElementById("nameerror").style.display="none";
+document.getElementById("regerror").style.display="none";
+document.getElementById("emailerror").style.display="inlineblock";
+document.getElementById("emailerror").innerHTML="*Email
+is Invalid format";
+document.getElementById("email").focus();
+return false;
+}else if(mobnumber==""){
+document.getElementById("nameerror").style.display="none";
+document.getElementById("regerror").style.display="none";
+document.getElementById("emailerror").style.display="none";
+document.getElementById("moberror").style.display="inlineblock";
+document.getElementById("moberror").innerHTML="*Mobile
+Number is required";
+document.getElementById("mobile_number").focus();
+document.getElementById("mobile_number").focus();
+return false;
+}else if(!/^\d{10}$/.test(mobnumber)){
+document.getElementById("nameerror").style.display="none";
+document.getElementById("regerror").style.display="none";
+document.getElementById("emailerror").style.display="none";
+document.getElementById("moberror").style.display="inlineblock";
+document.getElementById("moberror").innerHTML="*Only
+10digit Mobile Number required";
+document.getElementById("mobile_number").focus();
+document.getElementById("mobile_number").focus();
+return false;
+}else if(tempaddress==""){
+document.getElementById("nameerror").style.display="none";
+document.getElementById("regerror").style.display="none";
+document.getElementById("emailerror").style.display="none";
+document.getElementById("moberror").style.display="none";
+document.getElementById("tempaddresserror").style.display="inline-block";
+document.getElementById("tempaddresserror").innerHTML="*Temporary Address
+is required";
+document.getElementById("tempaddress").focus();
+return false;
+}else if(permaaddress==""){
+document.getElementById("nameerror").style.display="none";
+document.getElementById("regerror").style.display="none";
+document.getElementById("emailerror").style.display="none";
+document.getElementById("moberror").style.display="none";
+document.getElementById("tempaddresserror").style.display="none";
+document.getElementById("permaaddresserror").style.display="inline-block";
+document.getElementById("permaaddresserror").innerHTML="*Permanent Address
+is required";
+document.getElementById("permaaddress").focus();
+return false;
+}else {
+}
+}
+function onChangePerma(){
+var
+check=document.getElementById("tempassameperma").checked;
+if(check){
+var tempaddress =
+document.forms["rkform"]["tempaddress"].value;
+if(tempaddress==""){
+document.getElementById("tempaddresserror").style.display="inline-block";
+document.getElementById("tempaddresserror").innerHTML="*Please Enter
+Temporary Address";
+document.getElementById("tempaddress").focus();
+return false;
+}else{
+document.getElementById("permaaddress").value=tempaddress;
+document.getElementById("permaaddress").setAttribute("disabled", "disabled");
+}
+}else{
+document.getElementById("permaaddress").value="";
+document.getElementById("permaaddress").removeAttribute("disabled");
+}
+}
+</script>
+</head>
+
+<body>
+<form onsubmit="return
+validateForm()">
+
+<p align="Center"><font size="5"><b>Student Registration</b></font></p>
+<fieldset>
+<table>
+<tr>
+<td>
+<label>Name: </label>
+</td>
+<td>
+<input type="text" name="name"
+id="name"> <span id="nameerror" style="color:red;display:none"></span>
+</td>
+</tr>
+<tr>
+<td>
+<label>Reg No: </label>
+</td>
+<td>
+<input type="text"
+name="reg_no" id="reg_no"> <span id="regerror" style="color:red;display:none"></span>
+</td>
+</tr>
+<tr>
+<td>
+<label>Email: </label>
+</td>
+<td>
+<input type="text" name="email"
+id="email"> <span id="emailerror" style="color:red;display:none"></span>
+</td>
+</tr>
+<tr>
+<td>
+<label>Mobile Number: </label>
+</td>
+<td>
+<input type="text"
+name="mobile_number" id="mobile_number"> <span id="moberror"
+style="color:red;display:none"></span>
+</td>
+</tr>
+<tr>
+<td>
+<label>Program: </label>
+</td>
+<td>
+<select name="program"
+id="program">
+<option value="bca"
+>BCA</option>
+<option
+value="b.tech">B.TECH</option>
+<option
+value="mca" selected>MCA</option>
+<option
+value="m.tech">M.TECH</option>
+</select>
+<span id="programerror"
+style="color:red;display:none"></span>
+</td>
+</tr>
+<tr>
+<td>
+<label>Temporary Address:
+</label>
+</td>
+<td>
+<input type="text"
+name="tempaddress" id="tempaddress">
+<span id="tempaddresserror"
+style="color:red;display:none"></span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<input type="checkbox"
+name="tempassameperma" id="tempassameperma" onchange="onChangePerma()">
+<label>Permanent address is
+same as temporary address </label>
+</td>
+</tr>
+<tr>
+<td>
+<label>Permanent Address:
+</label>
+</td>
+<td>
+<input type="text"
+name="permaaddress" id="permaaddress">
+<span id="permaaddresserror"
+style="color:red;display:none"></span>
+</td>
+</tr>
+<tr>
+<td>
+<input type="submit"
+value="Submit">
+</td>
+</tr>
+</table>
+</fieldset>
+</form>
+</body>
+</html>

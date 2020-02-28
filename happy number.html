@@ -1,0 +1,34 @@
+<html>
+<body >
+<button type="button" onclick="start()">Start</button>
+<script> 
+function hnum(num)
+{
+	var m, n ; var a = [] ;
+	while(num != 1 && a[num] !== true)
+	{
+		a[num] = true ; m = 0 ; while (num > 0)
+		{
+			n = num % 10 ; m += n * n ; num = (num - n) / 10 ;
+		}
+		num = m ;
+	}
+	return (num == 1) ;
+}
+
+function start(){
+var count = 5;
+var n = 1;
+var a = ''; 
+while(count-- > 0) 
+{ 
+	while(!hnum(n)) 
+		n++ ;
+	a = a+(n + ", ") ;
+	n++ ; 
+} 
+document.write('Happy numbers: '+a);
+}
+</script>
+</body>
+</html>

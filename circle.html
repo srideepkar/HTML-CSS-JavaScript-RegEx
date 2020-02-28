@@ -1,0 +1,21 @@
+<html>
+	<body>
+	<input type="text" name="tb1" id="111"> 1st number</input><br><br>
+	<button onclick="calcCircumference()" id="b1"> Circumference</button><br><br>
+	<button onclick="calArea()" id="b2">Area</button><br><br>
+	<h1 id="res1"></h1><br>
+	<h1 id="res2"></h1>
+	<script>
+	function calcCircumference(){
+		var r=document.getElementById("111").value;
+		var cir=2*3.14*parseFloat(r);
+		document.getElementById("res1").innerHTML="Circumference is: "+cir;
+	}
+	function calArea(){
+		var r=document.getElementById("111").value;
+		var area= 3.14*parseFloat(r)*parseFloat(r);
+		document.getElementById("res2").innerHTML="Area is: "+area;
+	}
+	</script>
+	</body>
+</html>

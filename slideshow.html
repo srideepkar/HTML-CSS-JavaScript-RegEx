@@ -1,0 +1,82 @@
+<html>
+<head>
+<script>
+var images=new Array();
+function startSideShow(){
+var i=0;
+setInterval(function(){
+var img=images[i];
+document.getElementById('gtimage').setAttribute("src",img);
+document.getElementById('slideimgnum').innerHTML=i+1;
+document.getElementById('slideimgnumlength').innerHTML=images.length;
+if(i<images.length){
+if(i==images.length-1){
+i=0;
+}else{
+i++;
+}
+}else{
+i=0;
+}
+},5000);
+}
+function addImage(){
+if(images.length==0){
+i=0;
+images[i]=document.getElementById('imgpaths').value;
+}else{
+var len=images.length;
+if(images.length<5){
+images[len]=document.getElementById('imgpaths').value;
+}
+}
+}
+function prevoiusImage(){
+if(i==0){
+i=images.length-1;
+var img=images[i];
+document.getElementById('gtimage').setAttribute("src",img);
+document.getElementById('slideimgnum').innerHTML=i+1;
+document.getElementById('slideimgnumlength').innerHTML=images.length;
+}else{
+i--;
+var img=images[i];
+document.getElementById('gtimage').setAttribute("src",img);
+document.getElementById('slideimgnum').innerHTML=i+1;
+document.getElementById('slideimgnumlength').innerHTML=images.length;
+}
+}
+function nextImage(){
+if(i==images.length-1){
+i=0;
+var img=images[i];
+document.getElementById('gtimage').setAttribute("src",img);
+document.getElementById('slideimgnum').innerHTML=i+1;
+document.getElementById('slideimgnumlength').innerHTML=images.length;
+}else{
+i++;
+var img=images[i];
+document.getElementById('gtimage').setAttribute("src",img);
+document.getElementById('slideimgnum').innerHTML=i+1;
+document.getElementById('slideimgnumlength').innerHTML=images.length;
+}
+}
+</script>
+</head>
+<body id="bodybg">
+<div>
+<h5>Image Path Url: <input type="text" id="imgpaths">
+<button type="text" onclick="addImage()">Add Image</button>
+<button type="text" onclick="startSideShow()">Start Side
+Show</button>
+</h5>
+</div>
+<div>
+<img src="7.png" id="gtimage">
+<p style="text-align:center"><span id="slideimgnum"></span>/<span
+id="slideimgnumlength"></span></p>
+</div>
+<button type="button" onclick="prevoiusImage()">prev</button>
+<button type="button" onclick="nextImage()">next</button>
+</body>
+</html>

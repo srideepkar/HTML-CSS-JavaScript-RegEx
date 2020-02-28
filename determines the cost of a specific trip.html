@@ -1,0 +1,20 @@
+<html>
+	<body>
+	miles: <input type="text" id="111"></input><br><br><br>
+	cost of a gallon of gas: <input type="text" id="222"></input><br><br><br>
+	car gas consumption (miles per gallon): <input type="text" id="333"></input><br><br><br>
+	<button onclick="calc()" id="b1">Calculate</button><br><br>
+	<h1 id="res"></h1><br>
+	<script>
+	var arr=[];
+	function calc(){
+			var m=parseFloat(document.getElementById("111").value);
+			var gc=parseFloat(document.getElementById("222").value);
+			var cgc=parseFloat(document.getElementById("333").value);
+			var tgc=m*gc;
+			var tc=tgc*cgc;
+			document.getElementById("res").innerHTML="Total cost of a specific trip: "+tc;
+			}	
+	</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+	<body>
+	<input type="text" name="tb1" id="111"> 1st number</input><br><br>
+	<input type="text" name="tb2" id="222"> 2nd number</input><br><br>
+	<input type="text" name="tb3" id="333"> 3rd number</input><br><br>
+	<button onclick="calculate()" id="b1"> Calculate </button><br><br>
+	<h1 id="res"></h1>
+	<script>
+	function calculate(){
+		var a=document.getElementById("111").value;
+		var b=document.getElementById("222").value;
+		var c=document.getElementById("333").value;
+		if(parseInt(a)>parseInt(b) && parseInt(a)>parseInt(c)){
+			document.getElementById("res").innerHTML="Greatest Number is: "+a;
+		}
+		else if(parseInt(b)>parseInt(a) && parseInt(b)>parseInt(c)){
+			document.getElementById("res").innerHTML="Greatest Number is: "+b;
+		}
+		else{
+			document.getElementById("res").innerHTML="Greatest Number is: "+c;
+		}
+	}
+	</script>
+	</body>
+</html>

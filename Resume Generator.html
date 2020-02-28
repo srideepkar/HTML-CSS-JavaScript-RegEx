@@ -1,0 +1,143 @@
+<html>
+<head>
+<script>
+function createResume(){
+var fullnamme= document.getElementById('name').value;
+var mobnumber= document.getElementById('number').value;
+var address= document.getElementById('address').value;
+document.getElementById('fullname').innerHTML=fullnamme;
+document.getElementById('mobnumber').innerHTML=mobnumber;
+document.getElementById('fulladdress').innerHTML=address;
+var b10= document.getElementById('10b').value;
+var s10= document.getElementById('10s').value;
+var p10= document.getElementById('10p').value;
+var c10= document.getElementById('10c').value;
+document.getElementById('10thboard').innerHTML=b10;
+document.getElementById('10school').innerHTML=s10;
+document.getElementById('10year').innerHTML=p10;
+document.getElementById('10cgpa').innerHTML=c10;
+var b12= document.getElementById('12b').value;
+var s12= document.getElementById('12s').value;
+var p12= document.getElementById('12p').value;
+var c12= document.getElementById('12c').value;
+document.getElementById('12thboard').innerHTML=b12;
+document.getElementById('12thschool').innerHTML=s12;
+document.getElementById('12thyear').innerHTML=p12;
+document.getElementById('12thcgpa').innerHTML=c12;
+}
+</script>
+<style>
+table,th,td{
+border:1px solid black;
+width:100%;
+}
+</style>
+</head>
+<body>
+<h3>Enter Personal Info:</h3>
+
+<table>
+<tr>
+	<td>
+		Full Name: 
+	</td>
+	<td>
+		<input type="text" id="name">
+	</td>
+</tr>
+<tr>
+<td>Mobile Number:</td>
+<td> <input type="text" id="number"></td>
+</tr>
+<tr>
+<td>Address: </td>
+<td><input type="text" id="address"></td>
+</tr>
+</table>
+
+
+<h3>Academic Informations:</h3>
+<table>
+<tr>
+<td>
+Enter 10th Board:</td> <td><input type="text" id="10b"></td>
+</tr>
+<tr><td>
+Enter 10th School:</td> <td><input type="text" id="10s">
+</tr>
+<tr>
+<td>
+Enter 10th Passing Year:</td> <td><input type="text" id="10p"></td>
+</tr>
+<tr><td>
+Enter 10th CGPA: </td><td><input type="text" id="10c"></td>
+</tr>
+<tr><td>
+Enter 12th Board: </td><td><input type="text" id="12b"></td>
+</tr>
+<tr><td>
+Enter 12th School: </td><td><input type="text" id="12s"></td>
+</tr>
+<tr><td>
+Enter 12th Passing Year: </td><td><input type="text" id="12p"></td>
+</tr>
+<tr><td>
+Enter 12th CGPA: </td><td><input type="text" id="12c"></td>
+</tr>
+</table>
+
+
+<p align="center">
+<button type="button"
+onclick="createResume()" >Submit</button></p><br><br>
+
+
+<div id="resume" style="border:2px solid
+#ddd;margin:5px;padding:5px">
+<h3 style="text-align:center;">MY RESUME</h3>
+<div style="border:1px">
+<div style="background:#333;color:white;padding:5px
+10px">Personal Inforation</div>
+<h1 style="margin:5px 0px 5px 10px"
+id="fullname"></h1>
+<h4 style="margin:5px 0px 5px 10px"
+id="mobnumber"></h4>
+<h5 style="margin:5px 0px 5px 10px"
+id="fulladdress"></h5>
+</div>
+<div style="border:1px">
+<div style="background:#333;color:white;margin:5px
+0px ;padding:5px 10px">Academic Inforation</div>
+<table>
+<tr>
+<td><b>Class</b></td>
+<td><b>Board</b></td>
+<td><b>School / University</b></td>
+<td><b>Passing Year</b></td>
+<td><b>CGPA</b></td>
+</tr>
+<tr>
+<td>10<sup>th</sup></td>
+<td id="10thboard"></td>
+<td id="10school"></td>
+<td id="10year"></td>
+<td id="10cgpa"></td>
+</tr>
+<tr>
+<td>12<sup>th</sup></td>
+<td id="12thboard"></td>
+<td id="12thschool"></td>
+<td id="12thyear"></td>
+<td id="12thcgpa"></td>
+</tr>
+</table>
+<h1 style="margin:5px 0px 5px 10px"
+id="fullname"></h1>
+<h4 style="margin:5px 0px 5px 10px"
+id="mobnumber"></h4>
+<h5 style="margin:5px 0px 5px 10px"
+id="fulladdress"></h5>
+</div>
+</div>
+</body>
+</html>
